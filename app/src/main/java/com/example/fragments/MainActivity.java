@@ -4,14 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mButton,nextButton;
+    private Button mButton;
     private boolean isFragmentDisplayed = false;
 
     // Saved instance state key.
@@ -22,17 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mButton = findViewById(R.id.open_button);
-        nextButton = findViewById(R.id.next_button);
-
-
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // starting background task to update product
-                Intent fp= new Intent(getApplicationContext(),SecondActivity.class);
-                startActivity(fp);
-            }
-        });
 
         // If returning from a configuration change, get the
         // fragment state and set the button text.
